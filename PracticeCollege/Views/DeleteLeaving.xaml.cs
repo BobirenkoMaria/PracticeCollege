@@ -1,4 +1,5 @@
-﻿using PracticeCollege.ViewModels;
+﻿using PracticeCollege.Models;
+using PracticeCollege.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,14 +18,14 @@ using System.Windows.Shapes;
 namespace PracticeCollege.Views
 {
     /// <summary>
-    /// Логика взаимодействия для AddLeaving.xaml
+    /// Логика взаимодействия для DeleteLeaving.xaml
     /// </summary>
-    public partial class AddLeaving : Page
+    public partial class DeleteLeaving : Page
     {
-        public AddLeaving()
+        public DeleteLeaving(Teacher selectedLastName, Group selectedGroupNum, DateTime dateStartPeriod, DateTime dateEndPeriod, Student selectedStudent)
         {
             InitializeComponent();
-            DataContext = new AddLeavingVM();
+            DataContext = new DeleteLeavingVM(selectedLastName, selectedGroupNum, dateStartPeriod, dateEndPeriod, selectedStudent);
         }
     }
 }

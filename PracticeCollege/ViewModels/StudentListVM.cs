@@ -86,6 +86,7 @@ namespace PracticeCollege.ViewModels
         }
 
         public ViewCommand AddLeaving { get; set; }
+        public ViewCommand DeleteLeaving { get; set; }
 
         void StudentList()
         {
@@ -131,7 +132,11 @@ namespace PracticeCollege.ViewModels
 
             AddLeaving = new ViewCommand(() =>
             {
-                mainVM.CurrentPage = new AddLeaving(mainVM);
+                mainVM.CurrentPage = new AddLeaving();
+            });
+            DeleteLeaving = new ViewCommand(() =>
+            {
+                mainVM.CurrentPage = new DeleteLeaving(SelectedLastName, SelectedGroupNum, DateStartPeriod, DateEndPeriod, SelectedStudent);
             });
         }
     }

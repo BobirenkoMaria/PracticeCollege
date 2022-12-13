@@ -17,14 +17,14 @@ using System.Windows.Shapes;
 namespace PracticeCollege.Views
 {
     /// <summary>
-    /// Логика взаимодействия для AddLeaving.xaml
+    /// Логика взаимодействия для GroupList.xaml
     /// </summary>
-    public partial class AddLeaving : Page
+    public partial class GroupList : Page
     {
-        public AddLeaving()
+        public GroupList()
         {
             InitializeComponent();
-            DataContext = new AddLeavingVM();
+            DataContext = new GroupListVM();
         }
     }
 }

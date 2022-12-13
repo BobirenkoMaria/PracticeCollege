@@ -1,4 +1,5 @@
-﻿using PracticeCollege.Tools;
+﻿using PracticeCollege.Models;
+using PracticeCollege.Tools;
 using PracticeCollege.Views;
 using System;
 using System.Collections.Generic;
@@ -10,14 +11,15 @@ namespace PracticeCollege.ViewModels
 {
     public class AddLeavingVM
     {
-        public ViewCommand BackButton { get; set; }
+        public List<Student> StudentsSource { get; set; }
+        public List<Lesson> LessonsSource { get; set; }
+        public int LessonNum { get; set; }
+        public DateTime LeavingDate { get; set; } = DateTime.Now;
 
-        public AddLeavingVM(MainVM mainVM)
+        public AddLeavingVM()
         {
-            BackButton = new ViewCommand(() =>
-            {
-                mainVM.CurrentPage = new StudentsList(mainVM);
-            });
+            StudentsSource = user12Context.GetInstance().Students.ToList();
+            LessonsSource = user12Context.GetInstance().Lessons.ToList();
         }
     }
 }
