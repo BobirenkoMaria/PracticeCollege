@@ -16,11 +16,11 @@
             <TextBox Text="{Binding TeacherName}"/>
             <Label Content="Отчество" Foreground="White"/>
             <TextBox Text="{Binding TeacherPatronymicName}"/>
-            <!--<Label Content="Куратор" Foreground="White"/>
+            <Label Content="Куратор" Foreground="White"/>
             <CheckBox IsChecked="{Binding IsCurator}"/>
             <Label Content="Группа" Foreground="White"/>
-            <ComboBox ItemsSource="{Binding GroupSource}"/>-->
+            <ComboBox ItemsSource="{Binding GroupSource}" SelectedItem="{Binding SelectedGroup}" DisplayMemberPath="GroupNumber"/>
         </StackPanel>
-        <Button Grid.Column="1" Content="🖬" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Foreground="White"/>
+        <Button Grid.Column="1" Content="🖬" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Foreground="White" Command="{Binding SaveCommand}"/>
     </Grid>
 </Page>

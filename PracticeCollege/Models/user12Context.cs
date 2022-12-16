@@ -33,6 +33,8 @@ namespace PracticeCollege.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.EnableSensitiveDataLogging();
+
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer("server=192.168.200.35;database=user12;user=user12;password=75352");
@@ -52,7 +54,7 @@ namespace PracticeCollege.Models
 
             modelBuilder.Entity<Leaving>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.LeavingDate).HasColumnType("datetime");
 
@@ -69,7 +71,7 @@ namespace PracticeCollege.Models
 
             modelBuilder.Entity<Lesson>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.LessonName)
                     .HasMaxLength(50)
@@ -99,7 +101,7 @@ namespace PracticeCollege.Models
 
             modelBuilder.Entity<Student>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(30)
@@ -122,7 +124,7 @@ namespace PracticeCollege.Models
 
             modelBuilder.Entity<Teacher>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(20)

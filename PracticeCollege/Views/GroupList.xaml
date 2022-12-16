@@ -9,7 +9,16 @@
       Title="GroupList">
 
     <Grid>
-        <ListBox ItemsSource="{Binding GroupSource}">
+        <ListBox ItemsSource="{Binding GroupSource}" 
+                 SelectedItem="{Binding SelectedGroup}"
+                 HorizontalContentAlignment="Stretch">
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="🗑" FontSize="16"
+                              Command="{Binding DeleteWrite}" />
+                </ContextMenu>
+            </ListBox.ContextMenu>
+            
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>

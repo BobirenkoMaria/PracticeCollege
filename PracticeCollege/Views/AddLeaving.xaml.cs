@@ -21,10 +21,10 @@ namespace PracticeCollege.Views
     /// </summary>
     public partial class AddLeaving : Page
     {
-        public AddLeaving()
+        public AddLeaving(MainVM mainVM)
         {
             InitializeComponent();
-            DataContext = new AddLeavingVM();
+            DataContext = new AddLeavingVM(mainVM);
         }
     }
 }

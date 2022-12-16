@@ -9,7 +9,7 @@
       Title="TeachersList">
 
     <Grid>
-        <ListBox ItemsSource="{Binding TeachersSource}">
+        <ListBox ItemsSource="{Binding TeachersSource}" SelectedItem="{Binding SelectedTeacher}" HorizontalContentAlignment="Stretch">
             <ListBox.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Добавить препода" Command="{Binding AddTeacher}"/>
@@ -30,8 +30,8 @@
                         <TextBlock Grid.Column="0" Text="{Binding SurName}"/>
                         <TextBlock Grid.Column="1" Text="{Binding Name}"/>
                         <TextBlock Grid.Column="2" Text="{Binding PatronomicName}"/>
-                        <TextBlock Grid.Column="3" Text="{Binding Group}"/>
-                        <TextBlock Grid.Column="4" Text="{Binding StatusCurator}"/>
+                        <TextBlock Grid.Column="3" Text="{Binding Group.GroupNumber}"/>
+                        <Button Grid.Column="4" FontSize="16" Content="🗑" Command="{Binding DeleteWrite}" HorizontalAlignment="Right"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

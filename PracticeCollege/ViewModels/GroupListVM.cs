@@ -11,6 +11,8 @@ namespace PracticeCollege.ViewModels
     public class GroupListVM : BaseVM
     {
         List<Group> groupSource;
+        private Group _selectedGroup;
+
         public List<Group> GroupSource
         {
             get { return groupSource; }
@@ -21,9 +23,26 @@ namespace PracticeCollege.ViewModels
             }
         }
 
+        public Group SelectedGroup
+        {
+            get => _selectedGroup;
+            set
+            {
+                _selectedGroup = value;
+                SignalChanged();
+            }
+        }
+
+        public ViewCommand DeleteWrite { get; set; }
         public GroupListVM()
         {
             GroupSource = user12Context.GetInstance().Groups.ToList();
+
+            DeleteWrite = new(() =>
+            {
+                user12Context.GetInstance().Groups.Remove(SelectedGroup);
+                user12Context.GetInstance().SaveChanges();
+            });
         }
     }
 }

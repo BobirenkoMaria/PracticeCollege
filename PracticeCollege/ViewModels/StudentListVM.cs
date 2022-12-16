@@ -132,7 +132,7 @@ namespace PracticeCollege.ViewModels
 
             AddLeaving = new ViewCommand(() =>
             {
-                mainVM.CurrentPage = new AddLeaving();
+                mainVM.CurrentPage = new AddLeaving(mainVM);
             });
             DeleteLeaving = new ViewCommand(() =>
             {

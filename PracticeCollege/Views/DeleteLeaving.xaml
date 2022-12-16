@@ -9,7 +9,7 @@
       Title="DeleteLeaving">
 
     <Grid>
-        <ListBox Grid.RowSpan="3" ItemsSource="{Binding StudentSource}" HorizontalContentAlignment="Stretch" SelectedItem="{Binding SelectedStudent}">
+        <ListBox Grid.RowSpan="3" ItemsSource="{Binding LeavingsSource}" HorizontalContentAlignment="Stretch" SelectedItem="{Binding SelectedLeaving}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
